@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Imagens</title>
+  <style>
+    .container {
+      width: 820px;
+      margin: 0 auto;
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .container img {
+      width: 800px;
+      height: 450px;
+    }
+
+    .container .buttons {
+      width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+  <script>
+    var images = [
+      "images/delicate-arch.jpg",
+      "images/mountain.jpg",
+      "images/western.jpg"
+    ];
+
+    function changeImage(index) {
+      document.getElementById('my-image').src = images[index];
+    }
+
+  </script>
+</head>
+<body>
+  <div class="container">
+    <img id="my-image" src="images/delicate-arch.jpg" alt="">
+    <div class="buttons">
+      <input type="button" value="1" onclick="changeImage(0)">
+      <input type="button" value="2" onclick="changeImage(1)">
+      <input type="button" value="3" onclick="changeImage(2)">
+    </div>
+  </div>
+</body>
+</html>

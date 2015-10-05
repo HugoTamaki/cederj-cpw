@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic js</title>
+  <script>
+    // f(x) = 3.x^2 + 4.x + 3;
+    function f() {
+      var number = document.getElementById('valor').value;
+      var result = 3 * Math.pow(number, 2) + 4 * number + 3;
+      document.getElementById('result').innerHTML = result;
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="valor">
+  <input type="button" value = "Calcule" onclick="f()">
+  <div id="result">
+    
+  </div>
+</body>
+</html>
