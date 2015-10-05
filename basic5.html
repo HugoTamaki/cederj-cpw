@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic js - objects</title>
+  <script>
+    var person = {
+      name: 'John',
+      surname: 'Doe',
+      age: 30,
+      favouriteBooks: [
+        {
+          name: 'Book 1',
+          author: 'Fulano'
+        },
+        {
+          name: 'Book 2',
+          author: 'Ciclano'
+        }
+      ]
+    }
+
+    console.log(person.name + ' ' + person.surname + ', de ' + person.age + ' anos tem os seguintes livros:');
+    for(var i=0;i<person.favouriteBooks.length;i++) {
+      console.log(person.favouriteBooks[i].name + ', de ' + person.favouriteBooks[i].author);
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
