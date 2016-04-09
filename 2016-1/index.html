@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo 1</title>
+  <script src="funcoes.js"></script>
+</head>
+<body>
+  <h1>Teste</h1>
+
+  <p>
+    <select name="" id="" onchange="selectPrice(this)">
+      <option value="--">--</option>
+      <option value="80.00">aahhaha</option>
+      <option value="90.99">bwubeuwb</option>
+    </select>
+  </p>
+
+  <p>
+    <select name="" id="" onchange="selectPrice(this)">
+      <option value="--">--</option>
+      <option value="70.00">laranja</option>
+      <option value="50.99">branco</option>
+    </select>
+  </p>
+
+  <textarea name="" id="precos" cols="30" rows="10"></textarea>
+
+  <p>
+    <input type="button" value="Limpar" onclick="limpar()">
+  </p>
+
+  Total <input type="text" id="total">
+  <p>
+    Massa: <input type="text" id="massa">
+  </p>
+  <p>    
+    Altura: <input type="text" id="altura">
+  </p>
+  <p>
+    IMC: <input type="text" id="resultado" readonly>
+  </p>
+  <p id="resultHTML"></p>
+  <p>
+    <input type="button" value="Calcular!" onclick="calculaIMC()">
+  </p>
+</body>
+</html>
