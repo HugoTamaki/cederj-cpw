@@ -1,0 +1,24 @@
+.container {
+  width: 1000px;
+}
+
+.games-radio {
+  border: 1px solid black;
+  width: 45%;
+  float: left;
+}
+
+.games-radio .games-select {
+  display: none;
+}
+
+.games-radio .games-select.visible {
+  display: inline-block;
+}
+
+.games-display {
+  border: 1px solid black;
+  min-height: 85px;
+  width: 45%;
+  float: right;
+}

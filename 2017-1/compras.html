@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compras</title>
+</head>
+<script>
+  /* setCookie do W3schools:
+   https://www.w3schools.com/js/js_cookies.asp */
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" +
+    expires + ";path=/";
+  }
+
+  /* getCookie do W3schools:
+   https://www.w3schools.com/js/js_cookies.asp */
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  function getRAGCookies() {
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    var arco = new Array();
+
+    for (var i = 0; i < ca.length; i++) {
+      var co = ca[i].split('=');
+      if ( co[0].indexOf('RAG-') != -1 ) {
+        var p = co[0].split('-');
+        arco[i] = new Array(p[1], p[2], co[1]);
+      }
+    }
+    return arco;
+  }
+
+  function numItensCarro() {
+    var arco = getRAGCookies();
+    return arco.length;
+  }
+
+  function comprar(tp, ni) {
+    var nel = 1;
+    var nit = document.getElementById("nitcar");
+    var nomeck = "RAG-" + tp + "-" + ni;
+    var ckatual = getCookie(nomeck);
+    if ( ckatual.length > 0 )
+      nel += parseInt(ckatual);
+
+    setCookie(nomeck, nel, 1);
+    nit.innerHTML = numItensCarro();
+  }
+
+  function remover(tp, ni) {
+    var nomeck = "RAG-" + tp + "-" + ni;
+    setCookie(nomeck, "", 0);
+    location.reload();
+  }
+</script>
+<body>
+  <ul>
+    <li>Bola</li>
+    <li>Bicicleta</li>
+    <li>Videogame</li>
+  </ul>
+</body>
+</html>
