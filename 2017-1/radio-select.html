@@ -4,28 +4,80 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    var jogosSony = [
+      {
+        titulo: 'Dark Souls',
+        imagem: 'img/bla.jpg',
+        preco: 'R$ 90,00',
+      },
+      {
+        titulo: 'God of War',
+        preco: 'R$ 300,00'
+      }
+    ];
+
+    var jogosMicrosoft = [
+      {
+        titulo: 'Halo 3',
+        preco: 'R$ 90,00',
+      },
+      {
+        titulo: 'Minecraft',
+        preco: 'R$ 5,00'
+      }
+    ];
+
+    function mudarSelect() {
+      var sonyRadio = document.getElementById('sony-radio');
+      var microsoftRadio = document.getElementById('microsoft-radio');
+      var sonySelect = document.getElementById('sony-select');
+      var microsoftSelect = document.getElementById('microsoft-select');
+
+      if (sonyRadio.checked) {
+        sonySelect.classList.add('visible');
+        microsoftSelect.classList.remove('visible');
+      } else {
+        sonySelect.classList.remove('visible');
+        microsoftSelect.classList.add('visible');
+      }
+    }
+
+    function mostrarJogo(elem, tipo) {
+      var pos = elem.selectedIndex - 1;
+      if (tipo == 'sony') {
+        var jogo = jogosSony[pos];
+      } else {
+        var jogo = jogosMicrosoft[pos];
+      }
+
+      var display = document.getElementById('games-display');
+      var html = '<p>' + jogo.titulo + '</p><p>' + jogo.preco + '</p>';
+      display.innerHTML = html;
+    }
+  </script>
 </head>
 <body>
   <div class="container">
     <div class="games-radio">
       <p>
-        Sony - <input type="radio" name="brand" value="sony">
-        <select name="sonyGames" class="games-select">
+        Sony - <input type="radio" name="brand" id="sony-radio" value="sony" onclick="mudarSelect()">
+        <select name="sonyGames" id="sony-select" class="games-select" onchange="mostrarJogo(this, 'sony')">
           <option value="">--</option>
           <option value="dark-souls">Dark Souls</option>
           <option value="">God of War</option>
         </select>
       </p>
       <p>
-        Microsoft - <input type="radio" name="brand" value="microsoft">
-        <select name="microsoftGames" class="games-select">
+        Microsoft - <input type="radio" name="brand" id="microsoft-radio" value="microsoft" onclick="mudarSelect()">
+        <select name="microsoftGames" id="microsoft-select" class="games-select" onchange="mostrarJogo(this, 'microsoft')">
           <option value="">--</option>
           <option value="halo3">Halo 3</option>
           <option value="minecraft">Minecraft</option>
         </select>
       </p>
     </div>
-    <div class="games-display">
+    <div id="games-display" class="games-display">
 
     </div>
   </div>
