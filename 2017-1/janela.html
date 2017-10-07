@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Janela</title>
+  <script>
+
+    var produtos = [
+      {
+        titulo: 'Teste1',
+        preco: 'R$10,00'
+      },
+      {
+        titulo: 'Teste2',
+        preco: 'R$20,00'
+      },
+      {
+        titulo: 'Teste3',
+        preco: 'R$30,00'
+      }
+    ]
+
+    function abreJanela(index) {
+      var produto = produtos[index];
+
+      var janela = open('', "Teste Janela", "width=200,height=300");
+      var html = "<link href='css/style.css'>" + '<h1>' + produto.titulo + '</h1>' + '<p>' + produto.preco + '</p>';
+      janela.document.write(html);
+    }
+  </script>
+</head>
+<body>
+  <ul>
+    <li><a href="javascript:;" onclick="abreJanela(0)">Teste 1</a></li>
+    <li><a href="javascript:;" onclick="abreJanela(1)">Teste 2</a></li>
+    <li><a href="javascript:;" onclick="abreJanela(2)">Teste 3</a></li>
+  </ul>
+</body>
+</html>
