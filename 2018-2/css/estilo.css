@@ -1,0 +1,46 @@
+header {
+  display: block;
+  margin-bottom: 1px;
+}
+
+nav {
+  display: block;
+  width: 170px;
+  float: left;
+}
+
+section {
+  display: block;
+  width: 77%;
+  float: right;
+}
+
+address {
+  color: red;
+}
+
+.ender {
+  border-bottom: 1px solid yellow;
+}
+
+/*serve pra tag address que tem a classe .ender*/
+address.ender {
+  border-bottom: 1px solid red;
+}
+
+.texto-verde {
+  color: green;
+}
+
+/*serve pra .texto-verde que esteja dentro de nav*/
+nav .texto-verde {
+  border-bottom: 1px solid green;
+}
+
+.imgLogo {
+
+}
+
+.apres {
+
+}
